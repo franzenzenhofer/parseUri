@@ -5,7 +5,7 @@
 // see: http://blog.stevenlevithan.com/archives/parseuri
 // see: http://stevenlevithan.com/demo/parseuri/js/
 
-//forked into a node.js module by franz enzenhofer
+//forked into a node.js module by franz enzenhofer 
  
 
 function parseUri (str) {

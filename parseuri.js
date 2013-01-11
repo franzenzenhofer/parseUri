@@ -21,6 +21,19 @@ function parseUri (str) {
 		if ($1) uri[o.q.name][$1] = $2;
 	});
 
+	//	When host and source match, it means that we have no host and the path is relative.
+	if(uri['host'] == uri['source']) {
+		uri['host'] = '';
+		uri['relative'] = '/' + uri['source'];
+	}
+
+	//	When host is "." or "..", it again means that we have no host and the path is relative.
+	var host = uri['host'];
+	if(host == '.'
+		|| host == '..') {
+		uri['host'] = '';
+	}
+
 	return uri;
 };
 
